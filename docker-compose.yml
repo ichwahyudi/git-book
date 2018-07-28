@@ -1,0 +1,16 @@
+version: '3'
+services:
+  gitbook:
+    container_name: gitbook
+    image: gitbook:v0.0.1
+    restart: always
+    ports:
+      - '4000:4000'
+    volumes:
+      - ./git-book:/home/node/git-book
+    networks:
+      - default
+networks:
+  default:
+    external:
+      name: development-network
